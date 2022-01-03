@@ -1,0 +1,13 @@
+call plug#begin("$HOME/.vim/plugged")
+
+"Fugitive Vim Github Wrapper
+Plug 'tpope/vim-fugitive'
+
+Plug 'morhetz/gruvbox'
+Plug 'vim-scripts/256-grayvim'
+Plug 'blueshirts/darcula'
+Plug 'altercation/vim-colors-solarized'
+Plug 'ycm-core/YouCompleteMe'
+Plug 'itchyny/vim-gitbranch'
+
+call plug#end()
