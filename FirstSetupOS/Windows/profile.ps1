@@ -1,11 +1,20 @@
-
 #oh-my-posh prompt init pwsh --config "C:\Users\dadro\Documents\oh-my-posh\themes\amro.omp.json" | Invoke-Expression
+
+## Path to Visual Studio
+$Env:VsInstallPath = "C:\Program Files\Microsoft Visual Studio\2022\Community"
+
 
 Import-Module mymodule
 
-function pro { vim $profile }
 
-function Set-vcvars { Invoke-BatchFile "C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\Build\vcvars64.bat" }
+## Add Enter-VsDevShell
+## Example: Enter-VsDevShell -VsInstallPath "C:\Program Files\Microsoft Visual Studio\2022\Community"
+##      or: Enter-VsDevShell -VsInstallPath $Env:VsInstallPath
+Import-Module "$Env:VsInstallPath\Common7\Tools\Microsoft.VisualStudio.DevShell.dll"
+## Depricated
+## function Set-vcvars { Invoke-BatchFile "C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\Build\vcvars64.bat" }
+
+function pro { code $profile }
 function ecmake { cmake.exe -DCMAKE_EXPORT_COMPILE_COMMANDS=1 @Args }
 
 ## Настройка клавиш
